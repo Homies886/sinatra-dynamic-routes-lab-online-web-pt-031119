@@ -10,15 +10,12 @@ class App < Sinatra::Base
     (params[:number].to_i ** 2).to_s
   end
 
-  get 'say/:number/:phrase' do
-
-    final_phrase = ""
-
+  get '/say/:number/:phrase' do
+    final_string = ""
     (params[:number].to_i).times do
-      final_phrase += "#{params[:phrase]}\n"
+      final_string += "#{params[:phrase]}\n"
     end
-
-    final_phrase
+    final_string
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
